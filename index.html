@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/icono.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/store-services.css">
     <title>KuryData</title>
 </head>
 
@@ -65,6 +66,119 @@
 
 
         </div>
+        <div class="containerStore">
+            <section id="online-store">
+                <h2 class="section-title">-TIENDA ONLINE-</h2>
+        
+                <div class="container-store">
+                    <div class="promo-card">
+                        <span class="promo-label">Tienda</span>
+                        <h3 class="promo-title">Tecnología</h3>
+                        <p class="promo-description">
+                            Equipos de calidad con acompañamiento y asesoría confiable para tu negocio
+                        </p>
+        
+                        <ul class="promo-features">
+                            <li>
+                                <img src="img/store/icons/Check-yellow.png" alt="check" class="check-icon">
+                                <span>Equipos y componentes de alta calidad</span>
+                            </li>
+                            <li>
+                                <img src="img/store/icons/Check-yellow.png" alt="check" class="check-icon">
+                                <span>Asesoría personalizada según tu necesidad</span>
+                            </li>
+                            <li>
+                                <img src="img/store/icons/Check-yellow.png" alt="check" class="check-icon">
+                                <span>Alto rendimiento y durabilidad</span>
+                            </li>
+                        </ul>
+                    </div>
+        
+                    <div id="products-container">
+                        <!-- Productos cargados dinámicamente desde JavaScript -->
+                    </div>
+                </div>
+            </section>
+        
+            <section id="services-section">
+                <div id="services-container">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="img/store/icons/AplicacionesMoviles.png" alt="Aplicaciones Móviles">
+                        </div>
+                        <h4 class="service-title">Aplicaciones Móviles</h4>
+                        <ul class="service-features">
+                            <li>
+                                <img src="img/store/icons/check-blue.png" alt="check" class="check-icon-small">
+                                <span>Intuitivas para tu negocio.</span>
+                            </li>
+                            <li>
+                                <img src="img/store/icons/check-blue.png" alt="check" class="check-icon-small">
+                                <span>Rápidas y eficientes.</span>
+                            </li>
+                            <li>
+                                <img src="img/store/icons/check-blue.png" alt="check" class="check-icon-small">
+                                <span>Android y iOS.</span>
+                            </li>
+                            <li>
+                                <img src="img/store/icons/check-blue.png" alt="check" class="check-icon-small">
+                                <span>Conectan tu negocio con tus clientes.</span>
+                            </li>
+                        </ul>
+                        <button class="btn-service" onclick="requestService('Aplicaciones Móviles')">Solicitar Servicio</button>
+                    </div>
+        
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="img/store/icons/AplicacionesWeb.png" alt="Aplicaciones Web">
+                        </div>
+                        <h4 class="service-title">Aplicaciones Web</h4>
+                        <ul class="service-features">
+                            <li>
+                                <img src="img/store/icons/check-blue.png" alt="check" class="check-icon-small">
+                                <span>Personalizadas para tu negocio.</span>
+                            </li>
+                            <li>
+                                <img src="img/store/icons/check-blue.png" alt="check" class="check-icon-small">
+                                <span>Para gestión y crecimiento.</span>
+                            </li>
+                            <li>
+                                <img src="img/store/icons/check-blue.png" alt="check" class="check-icon-small">
+                                <span>Accesibles desde cualquier navegador.</span>
+                            </li>
+                        </ul>
+                        <button class="btn-service" onclick="requestService('Aplicaciones Web')">Solicitar Servicio</button>
+                    </div>
+        
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="img/store/icons/CreacionSitiosWeb.png" alt="Creación de Sitios Web">
+                        </div>
+                        <h4 class="service-title">Creación de Sitios Web</h4>
+                        <ul class="service-features">
+                            <li>
+                                <img src="img/store/icons/check-blue.png" alt="check" class="check-icon-small">
+                                <span>Enfocadas en generar contactos</span>
+                            </li>
+                            <li>
+                                <img src="img/store/icons/check-blue.png" alt="check" class="check-icon-small">
+                                <span>Para promocionar tu negocio</span>
+                            </li>
+                            <li>
+                                <img src="img/store/icons/check-blue.png" alt="check" class="check-icon-small">
+                                <span>Diseñadas para vender</span>
+                            </li>
+                            <li>
+                                <img src="img/store/icons/check-blue.png" alt="check" class="check-icon-small">
+                                <span>Claras y directas para tus servicios</span>
+                            </li>
+                        </ul>
+                        <button class="btn-service" onclick="requestService('Creación de Sitios Web')">Solicitar
+                            Servicio</button>
+                    </div>
+                </div>
+            </section>
+    </div>
     </main>
 
     <footer>
@@ -121,6 +235,7 @@
     </footer>
 
     <script src="main.js"></script>
+    <script src="js/store.js"></script>
 
 </body>
 
