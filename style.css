@@ -209,6 +209,7 @@ main > div {
     flex-wrap: wrap;
     box-shadow: var(--box-shadow-soft);
     border-radius: 0.5rem;
+    padding: 0.5rem 0;
     font-size: clamp(0.9rem, 1vw + 0.6rem, 1.1rem);
   
     background-color: white;
@@ -319,15 +320,18 @@ main > div {
     width: 60%;
     top: 80%;
     left: -5%;
-    padding: 0 0.5rem;
     background-color: white;
+    padding: 0.5rem ;
     border-radius: 1rem;
     box-shadow: var(--box-shadow-soft);
 }
 
 .containerAviso1 img {
 
-    width: 20%;
+    width: 30%;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background-color: var(--amarillo-icon);
 
 }
 
