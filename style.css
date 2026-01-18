@@ -5,12 +5,6 @@
     font-family: 'Inter', sans-serif;
 }
 
-main{
-
-    padding-top: 50vh;
-    height: 150vh;
-}
-
 .cta {
 
     display: flex;
@@ -117,4 +111,5 @@ main{
 
         gap: 1rem;
     }
+
 }
