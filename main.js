@@ -16,3 +16,14 @@ window.addEventListener("DOMContentLoaded", () => {
   const section = document.querySelector(".section-animate");
   section.classList.add("show");
 });
+const why = document.querySelector(".reveal-why");
+if (why) {
+  const obs = new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) {
+      why.classList.add("is-visible");
+      obs.disconnect();
+    }
+  }, { threshold: 0.25 });
+
+  obs.observe(why);
+}
