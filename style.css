@@ -131,10 +131,19 @@ main {
     min-height: 150vh;
 }
 
-/* Regla IMPORTANTE del original: controla el ancho de TUS secciones nuevas */
+/* --- CAMBIO: CONTENEDOR PRINCIPAL CON MÁRGENES --- */
 main > div {
-    width: clamp(300px, 80%, 1200px);
-    padding: 2rem 0;
+    /* Ocupará el 90% del ancho, dejando 5% de aire a cada lado automáticamente */
+    width: 90%; 
+    
+    /* Nunca será más ancho que 1200px (para pantallas muy grandes) */
+    max-width: 1200px; 
+    
+    /* Asegura padding interno a los costados para que el contenido respire */
+    padding: 2rem 20px; 
+    
+    /* Centra el contenedor en el medio de la pantalla */
+    margin: 0 auto; 
 }
 
 /** SECCION BIENVENIDA **/
@@ -244,7 +253,7 @@ main > div {
     color: white;
 }
 
-/******* imgenes bienvenida******/
+/******* imagenes bienvenida******/
 .heroBvText {
     width: 50%;
     display: flex;
@@ -285,17 +294,18 @@ main > div {
 }
 
 /* =========================================
-   SECCIÓN AÑADIDA DEL DESARROLLADOR (FORMULARIO Y GALERÍA)
-   ADAPTADA AL ESTILO ORIGINAL
+   SECCIÓN NUEVA: FORMULARIO Y GALERÍA
    ========================================= */
 
 /* Contenedor del Formulario */
 .main-container {
     display: flex;
-    width: 100%; /* El main > div controla el ancho máximo */
-    gap: 40px;
+    width: 100%; 
+    gap: 60px;
     align-items: flex-start;
-    background-color: transparent; /* Fondo transparente para ver el bg del body */
+    background-color: transparent;
+    /* Aseguramos que el contenido no se desborde */
+    max-width: 100%; 
 }
 
 /* --- SECCIÓN IZQUIERDA (Imagen) --- */
@@ -303,7 +313,8 @@ main > div {
     flex: 1;
     position: relative;
     border-radius: 15px;
-    overflow: visible;
+    /* Importante para que la burbuja no se corte si sale un poco */
+    overflow: visible; 
 }
 
 .image-placeholder {
@@ -340,7 +351,7 @@ main > div {
 }
 
 .icon-box {
-    background-color: var(--amarillo-icon); /* Adaptado al color del proyecto */
+    background-color: var(--amarillo-icon);
     width: 35px;
     height: 35px;
     border-radius: 8px;
@@ -348,6 +359,7 @@ main > div {
     align-items: center;
     justify-content: center;
     color: white;
+    flex-shrink: 0; /* Evita que el icono se aplaste */
 }
 
 .icon-box svg {
@@ -357,7 +369,7 @@ main > div {
 
 .floating-bubble p {
     font-size: 0.85rem;
-    color: var(--subtitulo-color-azul); /* Adaptado al color del proyecto */
+    color: var(--subtitulo-color-azul);
     font-weight: 500;
     line-height: 1.2;
 }
@@ -473,13 +485,11 @@ input[type="radio"]:checked {
     text-align: center;
 }
 
-/* Animación y estilo del Título */
 .dynamic-title {
     font-size: 2.5rem;
     font-weight: 800;
     margin-bottom: 40px;
     text-transform: uppercase;
-    /* Usamos los colores del proyecto para el gradiente */
     background: linear-gradient(90deg, var(--subtitulo-color-azul), var(--titulo-color-dorado), var(--subtitulo-color-azul));
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -495,7 +505,6 @@ input[type="radio"]:checked {
     }
 }
 
-/* Contenedor de las imágenes */
 .gallery-grid {
     display: flex;
     justify-content: space-between;
@@ -503,7 +512,6 @@ input[type="radio"]:checked {
     position: relative;
 }
 
-/* Tarjetas individuales */
 .gallery-card {
     flex: 1;
     height: 250px;
@@ -532,7 +540,7 @@ input[type="radio"]:checked {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: rgba(11, 52, 107, 0.9); /* Usando el azul del subtítulo con transparencia */
+    background: rgba(11, 52, 107, 0.9);
     color: white;
     padding: 10px;
     opacity: 0;
@@ -540,16 +548,11 @@ input[type="radio"]:checked {
     font-size: 0.9rem;
 }
 
-/* CLASE ACTIVA (Click) */
 .gallery-card.expanded {
     transform: scale(1.3);
     z-index: 100;
     box-shadow: 0 15px 40px rgba(0,0,0,0.3);
 }
-
-/* =========================================
-   FIN SECCIÓN AÑADIDA
-   ========================================= */
 
 /** FOOTER **/
 footer {
@@ -558,7 +561,7 @@ footer {
     padding: 2rem;
     gap: 2rem;
     background-color: white;
-    width: 100%; /* Asegurar que ocupe todo el ancho */
+    width: 100%;
 }
 
 .footerContainer1 {
@@ -636,185 +639,149 @@ footer {
     width: 80%;
     justify-content: space-around;
 }
+/* ====================================================================
+   RESPONSIVE - CORREGIDO Y MEJORADO
+   ==================================================================== */
 
-/** RESPONSIVE **/
+/* --- TABLETS Y MOVILES (Hasta 1024px) --- */
 @media (max-width: 1024px) {
+    
+    /* SOLUCIÓN AL PROBLEMA DEL 80%: 
+       Liberamos el ancho para que use el 95% de la pantalla en dispositivos táctiles */
+    main > div {
+        width: 95%; 
+        padding: 1rem 0; /* Reducimos padding vertical */
+    }
+
     .header {
-        padding: 0;
-        justify-content: space-around;
+        padding: 0.5rem 2rem;
+        justify-content: space-between;
     }
 
-    .logo {
-        padding: 0;
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .logo img {
-        max-height: 2rem;
-        width: auto;
-    }
-
-    .header.scrolled {
-        padding: 0;
-    }
-
-    .header.scrolled .logo img {
-        max-height: 2rem;
-    }
-
+    /* Ajustes generales del Header existente */
+    .logo { padding: 0; }
+    .logo img { max-height: 2.5rem; }
+    
+    /* Ajuste del fondo de bienvenida */
     .containerBienvenida {
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-image:
-            linear-gradient(rgba(21, 7, 82, 0.699),
-                rgba(17, 6, 68, 0.87)),
-            url(img/BienvenidaImg/fondo2.jpg);
-        background-size: cover;
         background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        min-height: 300px;
+        min-height: auto;
+        padding: 2rem 0;
     }
 
     .containerText {
-        width: 90%;
+        width: 100%;
         align-items: center;
-        backdrop-filter: blur(2px);
+        text-align: center;
     }
-
+    
+    .containerText > p { text-align: center; }
+    .heroBvText { display: none; } /* Ocultamos la imagen grande del hero en tablet/movil */
+    
     .divSoluciones {
-        background-color: rgba(255, 255, 255, 0.87);
-        padding: 0.5rem 0;
-        background: none;
-        box-shadow: none;
-        gap: 0;
-    }
-
-    .containerText>p {
-        text-align: center;
-    }
-
-    .text3Bv {
-        color: white;
-    }
-
-    .text4Bv {
-        color: white;
-        text-align: center;
-    }
-
-    .heroBvText {
-        display: none;
-    }
-
-    .containerBtnBv {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
         justify-content: center;
     }
 
-    .divSoluciones img {
-        width: 30%;
+    /* === AJUSTES DE TU FORMULARIO Y GALERÍA === */
+    .main-container {
+        flex-direction: column; /* Apilar uno sobre otro */
+        gap: 2rem; /* Espacio entre la imagen y el formulario */
+        align-items: center;
     }
 
-    .footerRedesContainer {
-        width: 100%;
-        gap: 1rem;
+    .image-section, .form-card {
+        width: 100%; 
+        flex: none; /* Quitamos el flex grow/shrink para evitar deformaciones */
     }
 
-    .footerSubMenuContainer {
-        display: none;
+    .image-section {
+        /* SOLUCIÓN IMAGEN TOPANDO LADOS:
+           Al tener el contenedor al 95% (arriba), ya no topará el borde absoluto.
+           Aquí aseguramos que la imagen se vea bien. */
+        margin-bottom: 1rem;
+    }
+
+    .image-placeholder {
+        height: 400px; /* Altura controlada para tablets */
+    }
+
+    .gallery-grid {
+        flex-direction: column;
+        gap: 1.5rem;
     }
 }
 
-/* Menu desplegable solo para móviles */
+/* --- SOLO MOVILES (Hasta 767px) --- */
 @media (max-width: 767px) {
-    .menu-toggle {
-        display: flex;
+    
+    /* Ancho casi total en móviles para aprovechar espacio */
+    main > div {
+        width: 92%; 
     }
+
+    .header { padding: 0.5rem 1rem; }
+
+    .menu-toggle { display: block; } /* Mostrar botón hamburguesa si tienes JS para activarlo */
 
     .navBar {
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: #ffffffee;
-        backdrop-filter: blur(2px);
+        background-color: white;
         flex-direction: column;
         align-items: center;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
+    
+    /* Clase para abrir menú con JS (si aplica) */
+    .navBar.active { max-height: 500px; padding: 1rem 0; }
 
     .navBar ul {
         flex-direction: column;
         gap: 1.5rem;
-        padding: 2rem 0;
+        padding: 0;
     }
 
-    .navBar.open {
-        max-height: 300px;
+    /* Ajustes Bienvenida Móvil */
+    .containerText > p { font-size: 1.8rem; }
+    .text4Bv { font-size: 1.1rem; width: 100%; }
+    
+    .divSoluciones img { width: 40px; }
+    .containerBtnBv { gap: 1rem; }
+    .containerBtnBv a { width: 100%; text-align: center; }
+
+    /* === AJUSTES FINOS DEL FORMULARIO EN MÓVIL === */
+    .form-card {
+        padding: 1.5rem; /* Menos relleno interno para dar espacio al input */
     }
 
-    footer {
-        gap: 1rem;
+    .image-placeholder {
+        height: 250px; /* Imagen más bajita en celular para que se vea el formulario rápido */
     }
 
-    .parrafoFooter {
-        display: none;
-    }
-
-    /* RESPONSIVE DE TUS NUEVAS SECCIONES */
-    .main-container {
-        flex-direction: column;
-    }
-
-    .image-section, .form-card {
-        width: 100%;
-    }
-
-    .gallery-grid {
-        flex-direction: column;
-    }
-
-    .gallery-card {
-        height: 200px;
-        width: 100%;
-    }
-
-    .gallery-card.expanded {
-        transform: scale(1.05); /* En móvil no agrandamos tanto */
+    .floating-bubble {
+        top: -10px;
+        right: 0;
+        transform: scale(0.9); /* Hacemos la burbuja un poco más pequeña */
+        transform-origin: top right;
     }
 
     .dynamic-title {
         font-size: 1.8rem;
-    }
-}
-
-/* Ajustes específicos para tablets */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .header {
-        justify-content: center;
-        gap: 1rem;
-        padding: 0.5rem;
+        margin-bottom: 20px;
     }
 
-    .header.scrolled {
-        padding: 1rem 5rem;
-    }
-
-    .navBar ul {
-        gap: 2rem;
-    }
-
-    .navBar ul li a {
-        font-size: 1rem;
-    }
-
-    .footerRedes a img {
-        height: 4rem;
-        width: auto;
-    }
+    /* Footer en móvil */
+    .footerContainer1 { flex-direction: column; gap: 2rem; align-items: center; }
+    .footerRedesContainer { width: 100%; }
+    .footerRedes { width: 80%; justify-content: center; }
+    .footerSubMenuContainer { display: none; } /* Ocultamos submenú en móvil para ahorrar espacio */
+    .parrafoFooter { flex-direction: column; text-align: center; gap: 1rem; }
 }
