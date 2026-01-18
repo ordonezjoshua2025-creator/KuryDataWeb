@@ -1,127 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/icono.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <!-- Solo mantenemos la hoja de estilo principal unificada -->
+    <link rel="stylesheet" href="styles.css">
     <title>KuryData</title>
 </head>
-
 <body>
 
-    <header class="header" id="header">
-        <div class="logo">
-            <img src="img/HeaderImg/KuriDataLogo2.png" alt="Logo de KuryData" loading="lazy">
+<!-- HEADER ORIGINAL -->
+<header class="header" id="header">
+    <div class="logo">
+        <img src="img/HeaderImg/KuriDataLogo2.png" alt="Logo de KuryData" loading="lazy">
+    </div>
+
+    <button class="menu-toggle" id="menuToggle">
+        ☰
+    </button>
+
+    <nav class="navBar" id="navBar">
+        <ul>
+            <li><a href="#home">INICIO</a></li>
+            <li><a href="#services">SERVICIOS</a></li>
+            <li><a href="#contact">CONTACTO</a></li>
+            <li><a href="#about">SOBRE NOSOTROS</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- SECCIÓN BIENVENIDA (ORIGINAL) -->
+    <div class="containerBienvenida section-animate" id="home">
+        <div class="containerText">
+            <div class="divSoluciones">
+                <img src="img/BienvenidaImg/SolucionesDigitales.png" alt="Soluciones digitales" loading="lazy">
+                <p class="text1Bv">SOLUCIONES DIGITALES</p>
+            </div>
+            <p class="text2Bv">TRANSFORMAMOS TU NEGOCIO</p>
+            <p class="text3Bv">EN UNA IMAGEN DIGITAL Y PROFESIONAL</p>
+            <span class="text4Bv">Desarrollamos software a medida que impulsa tu negocio hacia el futuro. </span>
+
+            <div class="containerBtnBv">
+                <a href="#contact" class="btnConsulta">CONSULTA</a>
+                <a href="#services" class="btnPortafolio">Ver Portafolio</a>
+            </div>
         </div>
 
-        <button class="menu-toggle" id="menuToggle">
-            ☰
-        </button>
-
-        <nav class="navBar" id="navBar">
-            <ul>
-                <li><a href="#home">INICIO</a></li>
-                <li><a href="#services">SERVICIOS</a></li>
-                <li><a href="#contact">CONTACTO</a></li>
-                <li><a href="#about">SOBRE NOSOTROS</a></li>
-            </ul>
-        </nav>
-
-    </header>
-
-    <main>
-        <div class="containerBienvenida section-animate">
-
-            <div class="containerText">
-                <div class="divSoluciones">
-                    <img src="img/BienvenidaImg/SolucionesDigitales.png" alt="Soluciones digitales para negocios" loading="lazy">
-                    <p class="text1Bv">SOLUCIONES DIGITALES</p>
-                </div>
-                <p class="text2Bv">TRANSFORMAMOS TU NEGOCIO</p>
-                <p class="text3Bv">EN UNA IMAGEN DIGITAL Y PROFESIONAL</p>
-                <span class="text4Bv">Desarrollamos software a medida que impulsa tu negocio hacia el futuro. </span>
-
-                <div class="containerBtnBv">
-                    <a href="#" class="btnConsulta">CONSULTA</a>
-                    <a href="#" class="btnPortafolio">Ver Portafolio</a>
-                </div>
-
+        <div class="heroBvText">
+            <img src="img/BienvenidaImg/codigoBienvenida.webp" alt="Código de bienvenida" loading="lazy">
+            <div class="containerAviso1">
+                <img src="img/BienvenidaImg/mision.png" alt="Misión" loading="lazy">
+                <p class="heroBvText1">Acompañamos el crecimiento de tu negocio online</p>
             </div>
-
-
-            <div class="heroBvText">
-                <img src="img/BienvenidaImg/codigoBienvenida.webp" alt="Código de bienvenida" loading="lazy">
-
-                <div class="containerAviso1">
-                    <img src="img/BienvenidaImg/mision.png" alt="Soluciones digitales para tu negocio" loading="lazy">
-                    <p class="heroBvText1">Acompañamos el crecimiento
-                        de tu negocio online</p>
-                </div>
-
-            </div>
-
-
-
         </div>
-    </main>
+    </div>
 
-    <footer>
+    <!-- SECCIÓN GALERÍA (TU PARTE ADAPTADA) -->
+    <!-- Aprovecha el estilo main > div del original para el ancho -->
+    <div class="gallery-section" id="services">
+        <h2 class="dynamic-title">NUESTROS LOGROS</h2>
 
-        <div class="footerContainer1">
-            <div class="footerRedesContainer">
-                <div class="footerLogo">
-                    <p class="subTitulo">KURYDATA</p>
+        <div class="gallery-grid">
+            <!-- Proyecto 1 -->
+            <div class="gallery-card" onclick="toggleSize(this)">
+                <img src="https://media.licdn.com/dms/image/v2/D4E22AQE7I8W37WSTaQ/feedshare-shrink_1280/B4EZk8TOnwGoAs-/0/1757653303406?e=1770249600&v=beta&t=xGKaz7MaZImNR5SaB_Nv3UlartwRUWs24zcoetYCyUc" alt="Proyecto 1">
+                
+            </div>
+
+            <!-- Proyecto 2 -->
+            <div class="gallery-card" onclick="toggleSize(this)">
+                <img src="https://media.licdn.com/dms/image/v2/D4E22AQEXuHei_h6RuQ/feedshare-shrink_1280/B4EZhufmcVGwAo-/0/1754200445068?e=1770249600&v=beta&t=tPc6qvBiZkUL2x4vCd-povj18hn5BWN17D-OAaRK2ao" alt="Proyecto 2">
+               
+            </div>
+
+            <!-- Proyecto 3 -->
+            <div class="gallery-card" onclick="toggleSize(this)">
+                <img src="https://media.licdn.com/dms/image/v2/D4E22AQErY8AHwaHIdQ/feedshare-shrink_800/B4EZe6HeuFHsAg-/0/1751174214080?e=1770249600&v=beta&t=JrejiyXqOXn3Js2Y080Yz-sIBKMTyQ7ZUvp6uYeTjJI" alt="Proyecto 3">
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN FORMULARIO (TU PARTE ADAPTADA) -->
+    <div class="main-container" id="contact">
+        
+        <div class="image-section">
+            <div class="floating-bubble">
+                <div class="icon-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                 </div>
-
-                <div class="footerRedes">
-                    <a href="#"><img src="img/Footer_icons_redes/facebook.png" alt="Síguenos en Facebook" loading="lazy"></a>
-
-                    <a href="#"><img src="img/Footer_icons_redes/instagram.png" alt="Síguenos en Instagram" loading="lazy"></a>
-
-                    <a href="#"><img src="img/Footer_icons_redes/linkedin (1).png" alt="Conecta con nosotros en LinkedIn" loading="lazy"></a>
+                <p>Estamos a un mensaje de distancia.</p>
+            </div>
+            
+            <div class="image-placeholder">
+                <!-- Asegúrate de tener esta imagen o usa una de prueba -->
+                <img src="analisisremo.webp" alt="Dashboard Contacto" class="dashboard-img" onerror="this.src='https://via.placeholder.com/500x500?text=KuryData'">
+            </div>
+        </div>
+    
+        <div class="form-card">
+            <form>
+                <div class="input-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" placeholder="Ingrese su nombre">
+                </div>
+    
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Ingrese su email">
+                </div>
+    
+                <div class="input-group">
+                    <label class="label-title">¿Qué servicios requieres?</label>
                     
-                    <a href="#"><img src="img/Footer_icons_redes/youtube.png" alt="Suscríbete a nuestro canal de YouTube" loading="lazy"></a>
+                    <div class="radio-option">
+                        <input type="radio" id="app-movil" name="servicio" value="movil">
+                        <label for="app-movil">Aplicaciones Móviles</label>
+                    </div>
+    
+                    <div class="radio-option">
+                        <input type="radio" id="app-web" name="servicio" value="web">
+                        <label for="app-web">Aplicaciones Web</label>
+                    </div>
+    
+                    <div class="radio-option">
+                        <input type="radio" id="sitios-web" name="servicio" value="sitio">
+                        <label for="sitios-web">Creación Sitios Web</label>
+                    </div>
                 </div>
+    
+                <div class="input-group">
+                    <textarea placeholder="Cuéntanos sobre ti"></textarea>
+                </div>
+    
+                <button type="submit" class="btn-submit">Enviar Consulta</button>
+            </form>
+        </div>
+    </div>
+
+</main>
+
+<!-- FOOTER ORIGINAL -->
+<footer>
+    <div class="footerContainer1">
+        <div class="footerRedesContainer">
+            <div class="footerLogo">
+                <p class="subTitulo">KURYDATA</p>
             </div>
-
-            <div class="footerSubMenuContainer"> 
-                <div class="subMenuText">
-                    <p class="tituloSubMenu"> INICIO</p>
-
-                    <a class="textoSubMenu" href="#">Como Trabajamos</a>
-                    <a class="textoSubMenu" href="#">Portafolio</a>
-
-                </div>
-                <div class="subMenuText">
-                    <p class="tituloSubMenu"> SERVICIOS</p>
-
-                    <a class="textoSubMenu" href="#">Tienda Online</a>
-                    <a class="textoSubMenu" href="#">Desarrollo Software</a>
-                </div>
-                <div class="subMenuText">
-                    <p class="tituloSubMenu"> CONTACTO</p>
-
-                    <a class="textoSubMenu" href="#">Redes Sociales</a>
-                    <a class="textoSubMenu" href="#">Perfiles</a>
-                </div>
+            <div class="footerRedes">
+                <a href="#"><img src="img/Footer_icons_redes/facebook.png" alt="Facebook" loading="lazy"></a>
+                <a href="#"><img src="img/Footer_icons_redes/instagram.png" alt="Instagram" loading="lazy"></a>
+                <a href="#"><img src="img/Footer_icons_redes/linkedin (1).png" alt="LinkedIn" loading="lazy"></a>
+                <a href="#"><img src="img/Footer_icons_redes/youtube.png" alt="YouTube" loading="lazy"></a>
             </div>
         </div>
 
-        <div class="footerContainer2">
-            <p>Copyright © 2025 Kurydata, Inc.</p>
-            <div class="parrafoFooter">
-                <p>Aspectos Legales</p>
-                <p>Politicas de Privacidad</p>
-                <p>Seguridad</p>
-                <p>Accesibilidad de Sitios</p>
+        <div class="footerSubMenuContainer"> 
+            <div class="subMenuText">
+                <p class="tituloSubMenu"> INICIO</p>
+                <a class="textoSubMenu" href="#">Como Trabajamos</a>
+                <a class="textoSubMenu" href="#">Portafolio</a>
+            </div>
+            <div class="subMenuText">
+                <p class="tituloSubMenu"> SERVICIOS</p>
+                <a class="textoSubMenu" href="#">Tienda Online</a>
+                <a class="textoSubMenu" href="#">Desarrollo Software</a>
+            </div>
+            <div class="subMenuText">
+                <p class="tituloSubMenu"> CONTACTO</p>
+                <a class="textoSubMenu" href="#">Redes Sociales</a>
+                <a class="textoSubMenu" href="#">Perfiles</a>
             </div>
         </div>
-    </footer>
+    </div>
 
-    <script src="main.js"></script>
+    <div class="footerContainer2">
+        <p>Copyright © 2025 Kurydata, Inc.</p>
+        <div class="parrafoFooter">
+            <p>Aspectos Legales</p>
+            <p>Politicas de Privacidad</p>
+            <p>Seguridad</p>
+            <p>Accesibilidad de Sitios</p>
+        </div>
+    </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="main.js"></script>
+<script>
+    // Script de la galería
+    function toggleSize(clickedElement) {
+        const allCards = document.querySelectorAll('.gallery-card');
+        allCards.forEach(card => {
+            if (card !== clickedElement) {
+                card.classList.remove('expanded');
+            }
+        });
+        clickedElement.classList.toggle('expanded');
+    }
+</script>
 
 </body>
-
 </html>
